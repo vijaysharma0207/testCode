@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+
+        <import type="android.view.View"/>
+
+        <variable
+            name="clickListener"
+            type="com.codebrew.kc.module.home.adapter.PageListener" />
+
+    </data>
+<TextView
+    android:id="@+id/tv_footer"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:fontFamily="@font/open_sans"
+    android:padding="@dimen/margin_dp_05"
+    android:text="Next >>"
+    android:onClick="@{(view) -> clickListener.onFooterClick(`Footer`)}"
+    android:textColor="@color/text_color"
+    android:textSize="@dimen/text_large" />
+</layout>

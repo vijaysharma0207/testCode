@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <import type="android.view.View"/>
+
+        <variable
+            name="userData"
+            type="com.codebrew.kc.retrofit.model.UserListResponse"/>
+
+    </data>
+<androidx.constraintlayout.widget.ConstraintLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/list_item_color"
+    app:position="@{userData.pos}">
+
+    <ImageView
+        android:id="@+id/iv_check"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/medium_margin"
+        app:layout_constraintBottom_toBottomOf="@+id/tv_name"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/tv_test_name"
+        app:srcCompat="@drawable/ic_checkmark" />
+
+    <TextView
+        android:id="@+id/tv_test_name"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/small_margin"
+        android:layout_marginTop="@dimen/small_margin"
+        android:layout_marginEnd="@dimen/small_margin"
+        android:text="@{userData.username,default=`UserName`}"
+        android:textStyle="bold"
+        android:textSize="@dimen/text_medium"
+        android:textColor="@color/text_color"
+        android:fontFamily="@font/open_sans"
+        app:layout_constraintEnd_toStartOf="@+id/iv_more"
+        app:layout_constraintStart_toEndOf="@+id/iv_check"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tv_name"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/small_margin"
+        android:layout_marginEnd="@dimen/small_margin"
+        android:layout_marginBottom="@dimen/small_margin"
+        android:text="@{userData.first_name+` `+userData.last_name,default=`First Last`}"
+        android:textSize="@dimen/text_small"
+        android:textColor="@color/gey_color"
+        android:fontFamily="@font/open_sans"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/tv_grp_type"
+        app:layout_constraintStart_toEndOf="@+id/iv_check"
+        app:layout_constraintTop_toBottomOf="@+id/tv_test_name" />
+
+    <ImageView
+        android:id="@+id/iv_more"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="@dimen/medium_margin"
+        app:layout_constraintBottom_toBottomOf="@+id/tv_test_name"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/tv_test_name"
+        app:srcCompat="@drawable/ic_more" />
+
+    <TextView
+        android:id="@+id/tv_grp_type"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="@dimen/small_margin"
+        android:text="@{userData.group,default=`Default Group`}"
+        android:textColor="@color/gey_color"
+        android:textSize="@dimen/text_small"
+        android:fontFamily="@font/open_sans"
+        app:layout_constraintBaseline_toBaselineOf="@+id/tv_name"
+        app:layout_constraintEnd_toEndOf="parent" />
+</androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

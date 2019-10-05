@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">@color/app_color</color>
+    <color name="colorPrimaryDark">@color/gey_color</color>
+    <color name="colorAccent">#e98c3b</color>
+
+    <color name="white">#ffffff</color>
+    <color name="text_color">#333333</color>
+    <color name="background_color">#f6f6f6</color>
+    <color name="gey_color">#808080</color>
+    <color name="app_color">#e98c3b</color>
+    <color name="list_item_color">#ebebeb</color>
+    <color name="green_color">#1D8A35</color>
+
+</resources>

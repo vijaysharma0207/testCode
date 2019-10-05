@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <import type="android.view.View"/>
+
+
+        <variable
+            name="countData"
+            type="com.codebrew.kc.retrofit.model.custom.PageStatusModel"/>
+
+        <variable
+            name="clickListener"
+            type="com.codebrew.kc.module.home.adapter.PageListener" />
+
+    </data>
+<TextView
+    android:id="@+id/textView"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:fontFamily="@font/open_sans"
+    android:padding="4dp"
+    android:onClick="@{(view) -> clickListener.onClick(countData)}"
+    android:text="@{String.valueOf(countData.page),default=`1`}"
+    android:textColor="@color/gey_color"
+    app:status="@{countData.status}"
+    android:textSize="@dimen/text_large" />
+
+</layout>
